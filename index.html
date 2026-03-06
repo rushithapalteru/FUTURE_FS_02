@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mini CRM Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<h2>Mini CRM</h2>
+
+<ul>
+<li>Dashboard</li>
+<li>Leads</li>
+<li>Analytics</li>
+<li>Settings</li>
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<header>
+
+<div class="header-top">
+
+<div>
+<h1>Hello, Rushitha 👋</h1>
+<p>Lead Management Dashboard</p>
+</div>
+
+</div>
+
+</header>
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="card">
+<h3>Total Leads</h3>
+<p id="totalLeads">0</p>
+</div>
+
+<div class="card">
+<h3>New</h3>
+<p id="newLeads">0</p>
+</div>
+
+<div class="card">
+<h3>Contacted</h3>
+<p id="contactedLeads">0</p>
+</div>
+
+<div class="card">
+<h3>Converted</h3>
+<p id="convertedLeads">0</p>
+</div>
+
+</div>
+
+<!-- ACTIVITY -->
+
+<div class="activity">
+
+<h3>Lead Activity</h3>
+
+<div class="bars">
+
+<div class="bar" style="height:40px"></div>
+<div class="bar" style="height:70px"></div>
+<div class="bar" style="height:60px"></div>
+<div class="bar" style="height:90px"></div>
+<div class="bar" style="height:50px"></div>
+
+</div>
+
+</div>
+
+<!-- ADD LEAD FORM -->
+
+<div class="form-card">
+
+<h2>Add Lead</h2>
+
+<input type="text" id="name" placeholder="Client Name">
+
+<input type="email" id="email" placeholder="Client Email">
+
+<select id="source">
+<option>Website</option>
+<option>Instagram</option>
+<option>LinkedIn</option>
+<option>Referral</option>
+</select>
+
+<select id="status">
+<option>New</option>
+<option>Contacted</option>
+<option>Converted</option>
+</select>
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button onclick="addLead()">Add Lead</button>
+
+</div>
+
+<!-- TABLE -->
+
+<div class="table-card">
+
+<h2>Lead List</h2>
+
+<input 
+type="text" 
+id="searchInput" 
+placeholder="Search leads..."
+onkeyup="searchLead()"
+class="search-box"
+>
+
+<table>
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Source</th>
+<th>Status</th>
+<th>Notes</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="leadTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+<section class="crm-dashboard">
+
+<h2>Customer Management Dashboard</h2>
+
+<!-- DASHBOARD CARDS -->
+<div class="dashboard-cards">
+
+<div class="card">
+<h3>Total Customers</h3>
+<p id="totalCustomers">25</p>
+</div>
+
+<div class="card">
+<h3>Total Orders</h3>
+<p>48</p>
+</div>
+
+<div class="card">
+<h3>Revenue</h3>
+<p>₹12,500</p>
+</div>
+
+</div>
+
+<!-- SEARCH + ADD -->
+<div class="crm-controls">
+
+<input type="text" id="searchInput" placeholder="Search customer...">
+
+<button onclick="addCustomer()">Add Customer</button>
+
+</div>
+
+</section>
+<table class="crm-table" id="crmTable">
+
+<thead>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Order</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Rahul Sharma</td>
+<td>rahul@email.com</td>
+<td>Chocolate Cake</td>
+<td>Completed</td>
+<td><button onclick="editRow(this)">Edit</button></td>
+</tr>
+
+<tr>
+<td>Ananya Gupta</td>
+<td>ananya@email.com</td>
+<td>Croissants</td>
+<td>Pending</td>
+<td><button onclick="editRow(this)">Edit</button></td>
+</tr>
+
+<tr>
+<td>Vikram Singh</td>
+<td>vikram@email.com</td>
+<td>Brownies</td>
+<td>Processing</td>
+<td><button onclick="editRow(this)">Edit</button></td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>
